@@ -1,16 +1,76 @@
 /* Resetting basic styles from browsers + all variables */
 :root{
+    /* Color */
     --dark-bg-color:#1f2937;
-    --hero-main-text-size:48px;
-    --hero-main-text-color:#f9faf8;
-    --hero-main-text-weight:900;
-    --hero-sub-text-size:18px;
-    --hero-sub-text-color:#e5e7eb;
-    --header-logo-text-size:24px;
-    --header-logo-text-color:#f9faf8;
+    --blue-color:#3882f6;
+    /* Div */
+    --block-padding:10px 20px 100px;
+    --block-max-width:1200px;
+    --block-margin:0 auto;
+    /* Size */
+    --header-main-img:60vh;
+    /* Text */
+    --header-h2-size:24px;
+    --header-h2-color:#f9faf8;
+    --header-text-size:18px;
+    --header-text-color:#e5e7eb;
+    --header-h1-size:48px;
+    --header-h1-color:#f9faf8;
+    --header-h1-weight:900;
+    /* Padding */
+    --padding-between-items:10px;
+    --menu-links-a-padding:0 10px;
+    /* Buttom */
+    --button-padding-top-botton:5px;
+    --button-padding-left-right:10px;
+    --button-border-radius:20px;
 }
 *{
     padding: 0;
     margin: 0;
     font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+/* Styles for the site header. */
+header{
+    background-color: var(--dark-bg-color);
+}
+header main, menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--block-padding);
+    max-width: var(--block-max-width);
+    margin: var(--block-margin);
+}
+header main img{
+    height: var(--header-main-img);
+}
+menu h2, .inform button{
+    font-size: var(--header-h2-size);
+    color: var(--header-h2-color);
+}
+.links a, .inform p{
+    font-size: var(--header-text-size);
+    color: var(--header-text-color);
+}
+.inform > *{
+    padding: var(--padding-between-items);
+}
+.inform h1{
+    font-size: var(--header-h1-size);
+    color: var(--header-h1-color);
+    font-weight: var(--header-h1-weight);
+}
+.inform button{
+    background-color: var(--blue-color);
+    padding: var(--button-padding-top-botton) var(--button-padding-left-right);
+    border-radius: var(--button-border-radius);
+    border: none;
+}
+.links a{
+    margin: var(--menu-links-a-padding);
 }
