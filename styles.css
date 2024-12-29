@@ -20,6 +20,7 @@
     /* Padding */
     --margin-between-items:10px;
     --menu-links-a-padding:0 10px;
+    --footer-padding-top-botton:50px;
     /* Buttom */
     --button-padding-top-botton:5px;
     --button-padding-left-right:10px;
@@ -35,10 +36,10 @@ a{
     text-decoration: none;
 }
 /* Styles for the site header. */
-header{
+header, footer{
     background-color: var(--dark-bg-color);
 }
-header main, menu{
+header main, menu, footer p{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -53,7 +54,7 @@ menu h2, .inform button{
     font-size: var(--header-h2-size);
     color: var(--header-h2-color);
 }
-.links a, .inform p{
+.links a, .inform p, footer p{
     font-size: var(--header-text-size);
     color: var(--header-text-color);
 }
@@ -73,4 +74,9 @@ menu h2, .inform button{
 }
 .links a{
     margin: var(--menu-links-a-padding);
+}
+/* Footer */
+footer p{
+    padding: var(--footer-padding-top-botton) 0;
+    justify-content: center;
 }
