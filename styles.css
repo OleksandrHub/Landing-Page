@@ -18,7 +18,7 @@
     --header-h1-color:#f9faf8;
     --header-h1-weight:900;
     /* Padding */
-    --padding-between-items:10px;
+    --margin-between-items:10px;
     --menu-links-a-padding:0 10px;
     /* Buttom */
     --button-padding-top-botton:5px;
@@ -58,7 +58,7 @@ menu h2, .inform button{
     color: var(--header-text-color);
 }
 .inform > *{
-    padding: var(--padding-between-items);
+    margin: var(--margin-between-items);
 }
 .inform h1{
     font-size: var(--header-h1-size);
