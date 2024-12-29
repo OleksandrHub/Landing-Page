@@ -1,0 +1,16 @@
+/* Resetting basic styles from browsers + all variables */
+:root{
+    --dark-bg-color:#1f2937;
+    --hero-main-text-size:48px;
+    --hero-main-text-color:#f9faf8;
+    --hero-main-text-weight:900;
+    --hero-sub-text-size:18px;
+    --hero-sub-text-color:#e5e7eb;
+    --header-logo-text-size:24px;
+    --header-logo-text-color:#f9faf8;
+}
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
