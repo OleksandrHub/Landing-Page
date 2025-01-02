@@ -3,36 +3,42 @@
     /* Color */
     --dark-bg-color:#1f2937;
     --blue-color:#3882f6;
-    --main-second-bg-color:#e5e7eb;
+    --light-bg-color:#e5e7eb;
     /* Div */
     --block-padding:10px 20px 100px;
     --block-max-width:1200px;
     --block-margin:0 auto;
     /* Size */
     --header-main-img:60vh;
+    --main-first-figure-width:clamp(150px, 20vw, 300px);
+    --first-article-img-width:100%;
     /* Text */
-    --header-h2-size:24px;
-    --header-h2-color:#f9faf8;
-    --header-text-size:18px;
-    --header-text-color:#e5e7eb;
+    --text-h2Andbutton-size:24px;
+    --text-h2Andbutton-color:#f9faf8;
+    --text-size:18px;
+    --text-color:#e5e7eb;
     --header-h1-size:48px;
     --header-h1-color:#f9faf8;
     --header-h1-weight:900;
     --main-h2-size:36px;
-    --main-h2-color:#1f2937;
+    --main-text-color:#1f2937;
     --main-first-h2-weight:900;
     --main-second-h2-style:italic;
     --main-second-h2-weight:lighter;
     /* Padding */
-    --margin-between-items:min(2vw, 20px);
+    --margin-between-items:clamp(10px, 2vw, 20px);
     --menu-links-a-padding:0 10px;
     --footer-padding-top-botton:50px;
+    --third-arcticle-padding:20px;
     /* Buttom */
     --button-padding-top-botton:5px;
     --button-padding-left-right:10px;
-    --button-border-radius:20px;
-    /* Image */
-    --first-article-img-width:100%;
+    /* Border */
+    --button-border-radius:5px;
+    --button-border:2px solid var(--text-color);
+    --first-arcticle-img-border-radius:50px;
+    --first-arcticle-img-border:4px solid var(--blue-color);
+    --third-arcticle-border-radius:20px;
 }
 *{
     padding: 0;
@@ -43,7 +49,7 @@
 a{
     text-decoration: none;
 }
-/* Styles for the site header. */
+/* Basic */
 header, footer{
     background-color: var(--dark-bg-color);
 }
@@ -55,23 +61,15 @@ header main, menu, footer p{
     max-width: var(--block-max-width);
     margin: var(--block-margin);
 }
-header main img{
-    height: var(--header-main-img);
+menu h2, .third h2, .inform button, .third button{
+    font-size: var(--text-h2Andbutton-size);
+    color: var(--text-h2Andbutton-color);
 }
-menu h2, .inform button{
-    font-size: var(--header-h2-size);
-    color: var(--header-h2-color);
+.links a, .inform p, footer p, .third p{
+    font-size: var(--text-size);
+    color: var(--text-color);
 }
-.links a, .inform p, footer p{
-    font-size: var(--header-text-size);
-    color: var(--header-text-color);
-}
-.inform h1{
-    font-size: var(--header-h1-size);
-    color: var(--header-h1-color);
-    font-weight: var(--header-h1-weight);
-}
-.inform button{
+.inform button, .third button{
     background-color: var(--blue-color);
     padding: var(--button-padding-top-botton) var(--button-padding-left-right);
     border-radius: var(--button-border-radius);
@@ -80,6 +78,15 @@ menu h2, .inform button{
 .inform > *, main section > *{
     margin: var(--margin-between-items);
 }
+/* Header */
+header main img{
+    height: var(--header-main-img);
+}
+.inform h1{
+    font-size: var(--header-h1-size);
+    color: var(--header-h1-color);
+    font-weight: var(--header-h1-weight);
+}
 .links a{
     margin: var(--menu-links-a-padding);
 }
@@ -87,9 +94,12 @@ menu h2, .inform button{
 .first, .second, .third{
     padding: var(--block-padding);
 }
+.first article, .second h2, .second p, .third article{
+    max-width: var(--block-max-width);
+}
 .first h2{
     font-size: var(--main-h2-size);
-    color: var(--main-h2-color);
+    color: var(--main-text-color);
     font-weight: var(--main-first-h2-weight);
     text-align: center;
 }
@@ -98,25 +108,50 @@ menu h2, .inform button{
     gap: var(--margin-between-items);
     flex-wrap: wrap;
     justify-content: center;
-
 }
 .first article figure{
-    min-width: 150px;
-    width: 20vw;
-    max-width: 600px;
+    width: var(--main-first-figure-width);
 }
 .first article img{
     width: var(--first-article-img-width);
     aspect-ratio: 1 / 1;
-    width: 100%;
     object-fit: cover; 
-    border-radius: 50px;
-    border: 4px solid var(--blue-color);
+    border-radius: var(--first-arcticle-img-border-radius);
+    border: var(--first-arcticle-img-border);
 }
 .first article figcaption{
     font-size: var(--header-text-size);
-    color: var(--main-h2-color);
+    color: var(--main-text-color);
     text-align: center;
+}
+/* Main Section 2*/
+.second{
+    background-color: var(--light-bg-color);
+}
+.second h2{
+    font-size: var(--main-h2-size);
+    color: var(--main-text-color);
+    font-weight: var(--main-second-h2-weight);
+    font-style: var(--main-second-h2-style);
+    text-align: center;
+}
+.second p{
+    font-size: var(--text-size);
+    color: var(--main-text-color);
+    font-weight: var(--main-first-h2-weight);
+    text-align: end;
+}
+/* Main Section 3*/
+.third article{
+    background-color: var(--blue-color);
+    border-radius: var(--third-arcticle-border-radius) ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--third-arcticle-padding);
+}   
+.third button{
+    border: var(--button-border);
 }
 /* Footer */
 footer p{
