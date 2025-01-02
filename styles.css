@@ -3,6 +3,7 @@
     /* Color */
     --dark-bg-color:#1f2937;
     --blue-color:#3882f6;
+    --main-second-bg-color:#e5e7eb;
     /* Div */
     --block-padding:10px 20px 100px;
     --block-max-width:1200px;
@@ -17,14 +18,21 @@
     --header-h1-size:48px;
     --header-h1-color:#f9faf8;
     --header-h1-weight:900;
+    --main-h2-size:36px;
+    --main-h2-color:#1f2937;
+    --main-first-h2-weight:900;
+    --main-second-h2-style:italic;
+    --main-second-h2-weight:lighter;
     /* Padding */
-    --margin-between-items:10px;
+    --margin-between-items:min(2vw, 20px);
     --menu-links-a-padding:0 10px;
     --footer-padding-top-botton:50px;
     /* Buttom */
     --button-padding-top-botton:5px;
     --button-padding-left-right:10px;
     --button-border-radius:20px;
+    /* Image */
+    --first-article-img-width:100%;
 }
 *{
     padding: 0;
@@ -58,9 +66,6 @@ menu h2, .inform button{
     font-size: var(--header-text-size);
     color: var(--header-text-color);
 }
-.inform > *{
-    margin: var(--margin-between-items);
-}
 .inform h1{
     font-size: var(--header-h1-size);
     color: var(--header-h1-color);
@@ -72,8 +77,46 @@ menu h2, .inform button{
     border-radius: var(--button-border-radius);
     border: none;
 }
+.inform > *, main section > *{
+    margin: var(--margin-between-items);
+}
 .links a{
     margin: var(--menu-links-a-padding);
+}
+/* Main Section 1 */
+.first, .second, .third{
+    padding: var(--block-padding);
+}
+.first h2{
+    font-size: var(--main-h2-size);
+    color: var(--main-h2-color);
+    font-weight: var(--main-first-h2-weight);
+    text-align: center;
+}
+.first article{
+    display: flex;
+    gap: var(--margin-between-items);
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+.first article figure{
+    min-width: 150px;
+    width: 20vw;
+    max-width: 600px;
+}
+.first article img{
+    width: var(--first-article-img-width);
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    object-fit: cover; 
+    border-radius: 50px;
+    border: 4px solid var(--blue-color);
+}
+.first article figcaption{
+    font-size: var(--header-text-size);
+    color: var(--main-h2-color);
+    text-align: center;
 }
 /* Footer */
 footer p{
