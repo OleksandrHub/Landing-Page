@@ -5,7 +5,7 @@
     --blue-color:#3882f6;
     --light-bg-color:#e5e7eb;
     /* Div */
-    --block-padding:10px 20px 100px;
+    --block-padding:10px 10px 100px;
     --block-max-width:1200px;
     --block-margin:0 auto;
     /* Size */
@@ -53,7 +53,7 @@ a{
 header, footer{
     background-color: var(--dark-bg-color);
 }
-header main, menu, footer p{
+header main, menu, footer marquee{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -65,7 +65,7 @@ menu h2, .third h2, .inform button, .third button{
     font-size: var(--text-h2Andbutton-size);
     color: var(--text-h2Andbutton-color);
 }
-.links a, .inform p, footer p, .third p{
+.links a, .inform p, footer marquee, .third p{
     font-size: var(--text-size);
     color: var(--text-color);
 }
@@ -94,14 +94,16 @@ header main img{
 .first, .second, .third{
     padding: var(--block-padding);
 }
-.first article, .second h2, .second p, .third article{
+.first article, .first h2, .second h2, .second p, .third article{
     max-width: var(--block-max-width);
+    margin: var(--block-margin);
 }
 .first h2{
     font-size: var(--main-h2-size);
     color: var(--main-text-color);
     font-weight: var(--main-first-h2-weight);
     text-align: center;
+    margin: var(--margin-between-items);
 }
 .first article{
     display: flex;
@@ -152,9 +154,63 @@ header main img{
 }   
 .third button{
     border: var(--button-border);
+    margin: var(--margin-between-items);
 }
 /* Footer */
-footer p{
+footer marquee{
     padding: var(--footer-padding-top-botton) 0;
     justify-content: center;
+}
+/* For a phone */
+@media (max-width: 768px) {
+    :root{
+        --main-h2-size:26px;
+        --header-main-img:50vw;
+        --first-arcticle-figcaption-height:17vh;
+    }
+    .links{
+        display: flex;
+        flex-direction: column;
+    }
+    header main{
+        flex-wrap: wrap;
+    }
+    header main img{
+        width: var(--header-main-img);
+        height: auto;
+    }
+    .third article{
+        flex-wrap: wrap;
+    }
+    .first article figcaption{
+        height: var(--first-arcticle-figcaption-height);
+        overflow-y:hidden;
+        text-overflow: ellipsis;
+    }
+}
+/* Hover effect */
+:root{
+    --hover-color-blue: #295aa8;
+}
+@media (hover: hover){
+    .links a:hover{
+        filter: brightness(50%);
+    }
+    .inform button:hover, .third button:hover{
+        background-color:var(--hover-color-blue);
+    }
+    .first article img:hover{
+        width: 102%;
+    }
+}
+@media (hover: none) {
+    .links a:active{
+        filter: brightness(50%);
+    }
+    .inform button:active, .third button:active{
+        background-color:var(--hover-color-blue);
+    }
+    .first article img:active{
+        width: 102%;
+    }
 }
